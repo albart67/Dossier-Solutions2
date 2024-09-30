@@ -138,6 +138,20 @@ body {
     font-size: 18px;
 }
 
+#menu-commerciaux {
+    border:rgb(20, 2, 2);
+    font-size: 19px;
+    /* font-weight: bold; */
+  
+}
+
+#menu-contact-etude {
+    border:rgb(20, 2, 2);
+    font-size: 19px;
+    /* font-weight: bold; */
+  
+}
+
 #pic-entreprise {
     margin-top: 10px;
   
