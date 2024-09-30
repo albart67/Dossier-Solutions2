@@ -1,0 +1,282 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+
+/* CSS du menu*/
+.menu {
+    background-color: #f4f4f4;
+    padding: 10px;
+    width: 200px;
+    position: fixed; /* Fixer le menu en position */
+    top: 0;          /* Positionner le menu en haut de la page */
+    left: 0;         /* Positionner le menu à gauche de la page */
+    height: 100vh;   /* Faire en sorte que le menu prenne toute la hauteur de la page */
+    overflow-y: auto; /* Permettre de défiler dans le menu si son contenu est trop grand */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Optionnel : Ajouter une légère ombre */
+}
+
+#solutions-count {
+    font-size: 20px;
+}
+
+
+.menu-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.menu-button.active {
+    background-color: #00bfff;
+    color: white;
+}
+
+
+/*Caracéristiques des pages */
+
+/*Conteneur ensemble des pages*/
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.page {
+    width: 21cm;
+    min-height: 29.7cm;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: white;
+    page-break-after: always; 
+
+} 
+
+.page-group {
+    display: none;
+    width: 21cm;
+    min-height: 29.7cm;
+    margin: 0 auto;
+    padding: px;
+    /* border: 1px solid #ccc; */
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.page-group.active {
+    display: block;
+}
+
+
+
+
+
+
+
+/*CSS pour la page de garde*/
+
+#bandeau_DD_Eurevia {
+    width:100%;
+}
+
+.grand-caractere {
+    font-size: 24px;
+    padding: 10px;  
+    width: 100%;     
+    box-sizing: border-box; 
+    display: block;
+    margin: 0,auto;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    height: 180px;
+}
+
+#Entreprise {
+    height: 30px;
+    font-size: 20px;
+    width: 250px;
+    border: 1px solid lightgray; 
+
+}
+
+#Opportunite{
+            
+    margin-bottom: 10px; 
+    display: block; 
+    border: 1px solid lightgray; 
+    height: 20px;
+}
+
+#Etude {
+    border: 1px solid lightgray;
+    height: 20px;
+    display: block; 
+}
+
+#date-selection {
+    border: none;
+    font-size: 18px;
+}
+
+#pic-entreprise {
+    margin-top: 10px;
+  
+}
+
+/* footer {
+   
+   position: sticky;
+   bottom: 0;
+
+} */
+
+
+
+/*CSS Sommaire*/
+#sommaire  {
+    font-size: 20px;
+}
+
+
+#sommaire  h1 {
+    font-size: 40px;
+    text-align: center;
+    
+}
+
+
+
+/*Etat des Lieux et hypothèses du dossier*/
+#commentaire {
+    width: 700px;
+    height: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Permet de redimensionner uniquement verticalement */
+
+}
+
+/*Selection des solutions*/
+#solutions {
+    font-weight: bold ;   
+}
+
+/*Selection des Synoptique*/
+#selection1 {
+    font-weight: bold;
+}
+
+
+
+
+/*Affichage des schéma*/
+.schema {
+    transform: rotate(90deg);
+    /* Optionnel: Ajuster la taille si nécessaire */
+    width: 100%;
+    height: auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(90deg) translateX(250px); 
+    transform-origin: center; 
+}
+
+/* .image-container {
+    width: 19cm; ;
+    height: 29cm; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin-top: 0px;
+    overflow: hidden;
+} */
+
+
+#Annexe  {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#title_annexe {
+     font-size: 100px;
+    
+}
+
+
+
+
+/* Cacher le menu et ajuster la mise en page lors de l'impression */
+
+@media print {
+    .menu {
+        display: none;       
+    }
+
+    .page {            
+            border: none;
+    }
+     
+
+    .container {
+        display: block;
+    }
+
+    .page-group {
+        page-break-after: always;
+    }
+
+     @page {
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .page-group:last-of-type {
+        page-break-after: auto;
+    } 
+    /* .print-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    } */
+
+    /* Empêche que le footer se répète sur les pages suivantes */
+    .print-footer img {
+        page-break-before: avoid;
+        page-break-after: always;   
+    }
+}
+
+
+

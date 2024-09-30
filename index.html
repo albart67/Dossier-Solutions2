@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDR</title>
+
+        
+ 
+    <link rel="stylesheet" href="style11.css">
+
+    
+ 
+
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <label for="solutions-count"><h3>Nombre de schémas de principe :</h3></label>
+            <select id="solutions-count" onchange="displaySolutions()">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <br>
+            <br>
+
+            <h3>Documents produits présents dans le dossier Solutions:</h3>
+
+            <button class="menu-button" onclick="togglePages('MMTC')">MMTC</button>
+            <button class="menu-button" onclick="togglePages('IX')">IX</button>
+            <button class="menu-button" onclick="togglePages('IX-M')">IX-M</button>
+        </div>
+        <div class="content">
+
+            <div id="page1" class="page">
+
+                <header>
+                    <img id = "bandeau_DD_Eurevia" src="DD Eurevia PdG.png" alt="Description de l'image" >
+                    
+                </header>
+        
+                <h1><input type="text" class="grand-caractere" placeholder="Titre chantier..."></h1>
+       
+
+            
+                        
+                    
+                        <div class="info">
+                            <div>
+                                <div>
+            
+                                <h2><label for="Entreprise"><strong>Entreprise:</strong></label>
+                                <input type="text" id="Entreprise" name="Entreprise"></h2>
+            
+                                <label for="Opportunité" id="test"><strong>Opportunité:</strong></label>
+                                <input type="text" id="Opportunite" name="Opportunité">
+                                
+            
+                                <label id = "label-nr" for="Etude"><strong>Numéro Etude:</strong></label>
+                                <input type="text" id="Etude" name="Etude">                               
+                      
+            
+                            </div>
+            
+                        </div>
+            
+                         <div>  
+                            
+                            <form>
+                                <h2>Phase d'avancement</h2> 
+                                <label>
+                                    <input type="radio" name="avancement" value="APS">
+                                    APS
+                                </label><br>
+                                
+                                <label>
+                                    <input type="radio" name="avancement" value="APD">
+                                    APD
+                                </label><br>
+                                
+                                <label>
+                                    <input type="radio" name="avancement" value="DCE">
+                                    DCE
+                                </label><br>
+                                
+                                <label>
+                                    <input type="radio" name="avancement" value="EXE">
+                                    EXE
+                                </label><br>
+                                
+                            
+                             </form> 
+                    
+                                              
+                        <!-- Sélecteur de date -->
+                         <label for="date-selection">Date:</label>
+                        <input type="text" id="date-selection" name="date-selection" style="margin-top: 10px;">
+               
+            
+               
+                        </div> 
+                          
+            
+                        </div>
+                        <div class="info">
+            
+                            <div>
+                                <h3><label for="nom">Interlocuteur Commercial / Prescripteur</label></h3> 
+            
+                                    <!-- Menu déroulant pour sélectionner un commercial -->
+                                 <select id="menu-commerciaux" onchange="afficherInfoCommercial()">
+                                    <option value="">Sélectionnez un commercial</option>
+                                    <option value="john">John Doe</option>
+                                    <option value="jane">Jane Smith</option>
+                                    <option value="paul">Paul Dupont</option>
+                                    <option value="anne">Anne Durand</option>
+                                </select>
+            
+                                    <!-- Section pour afficher les informations du commercial -->
+                                <div id="info-commercial">
+                                    <!-- Les informations s'afficheront ici -->
+                                </div>
+            
+
+                                </div>
+                            <div>
+                          
+                                <h3>Back Office Études & Solutions</h3>
+            
+                                <select id="menu-contact-etude" >
+                                    <option value="">Sélectionnez un contact</option>
+                                    <option value="john">Alain Barthelmé</option>
+                                    <option value="jane">Jonathan Boehm</option>
+                                    <option value="paul">Cédric Kuntz</option>
+                                    <option value="anne">Tiffany Munch</option> 
+                                </select>
+            
+                                <p class="info-ligne">Téléphone: 0.825.290.202</p>
+                                <p class="info-ligne">Email: <a href="mailto:preconisation@bdrthermea.fr">preconisation@bdrthermea.fr</a></p>
+                            </div>
+                            
+                        </div>
+                            <img src="page de garde photo.png"  id = "pic-entreprise" alt="photo entreprise" width="700">
+
+                            <footer class="print-footer">
+
+                                <img src="Pied de page.png"  id = "footer-pic" alt="photo footer" width=100%>
+                                <!-- <div class="contact-info">
+                                    <p>BDR THERMEA France SAS - 57 rue de la Gare - F-67580 Mertzwiller - Tél. +33 3 88 73 75 00 - S.A.S au capital de 229 288 696 € - RCS Strasbourg 833 457 211</p>
+                             
+                                    <p>&copy; 2024 BDR THERMEA France SAS. Tous droits réservés.</p>
+                                   </div> -->
+                            </footer>
+                       
+                    </div> 
+                    
+
+              
+            
+
+            <div id="page2" class="page">      
+   
+                <section id="sommaire">
+                
+                        <h1>Sommaire</h1>
+                        <br>
+                
+                        <h2>Etat des lieux</h2>
+                        
+                        <ul>
+                            <li>Données Projet</li>
+                            <li>Evaluations & Hypothèses</li>
+                        </ul>
+                        <br>
+                        <h2>Notre solution</h2>
+                        <ul>
+                            <li>Schéma de principe hydraulique</li>
+                            <li>Performances attendues</li>
+                            <li>Prérequis - Point de vigilance</li>
+                            <li>Données techniques produits proposés</li>
+                        </ul>
+                        <br>
+                
+                        <h2>ANNEXES</h2>
+                        <ul>
+                            <li>Pré-Simulation énergétique</li>
+                            <li>Fiches saisie RE2020</li>
+                            <li>Services dédiés</li>
+                        </ul>
+                        <br>
+                
+                        <h2>Offre de prix PPHT</h2>
+                        <ul>
+                            <li>Conditions générales de vente</li>
+                        </ul>
+                </section>
+         
+            </div>
+
+            <div id="page3" class="page">
+
+
+                <!-- Image placée en haut à gauche -->
+                <img src="Calculatrice.png" alt="Calculatrice" class="top-right-image" width="150">
+            
+                <h1>Etat des lieux / Données de votre Projet</h1>
+                <br>
+            
+                <h2>Situation de l’installation actuelle :</h2>
+            
+                <textarea id="commentaire" name="commentaire" placeholder="Tapez votre texte ici..."></textarea>
+            
+                
+                <h2>Evaluations & Hypothèses (vérifier et confirmer) :</h2>
+            
+            
+                <textarea id="commentaire" name="commentaire" placeholder="Tapez votre texte ici..."></textarea>
+            
+            
+                <p class="note"><i>Ces valeurs et résultats sont donnés à titre indicatif ; la responsabilité de De Dietrich ne peut en aucun cas être engagée.</i></p>
+            
+            </div>
+
+
+            <div id="page4" class="page">
+
+
+                <!-- Image placée en haut à gauche -->
+                <img src="Notre_solution.png" alt="Notre solution" class="top-left-image" width="200">
+                <br>
+            
+                <h2>Notre solution adapté à votre besoin</h2>      
+                  <br>
+        
+        
+                <!-- <label for="solutions">Choisissez une solution :</label> -->
+                <select id="solutions" name="solutions">
+                    <option value="chauffage">Solution chauffage</option>
+                    <option value="sanitaire">Solution sanitaire</option>
+                    <option value="solaire">Solution solaire</option>
+                    <option value="hybride">Solution hybride</option>
+                    <option value="prechauffage-ecs-solaire">Solution préchauffage ECS solaire</option>
+                    <option value="prechauffage-ecs-pac">Solution préchauffage ECS par PAC</option>
+                </select>           
+            
+                <textarea id="commentaire" name="commentaire" placeholder="Tapez votre texte ici..."></textarea>               
+        
+                <br>
+                <br>        
+        
+                <label for="selection1"><h3><u>Synoptique de fonctionnement :</u></h3></label>
+          
+                <select class="menu-selection" id="selection1" name="selection1">
+                    <option value="">-- Sélectionnez une option --</option>
+                    <option value="ecs-mmtc">ECS par MMTC</option>
+                    <option value="ecs-chauffage-mmtc">ECS et chauffage par MMTC</option>
+                    <option value="chauffageMMTC-ecsIX">Chauffage par MMTC et ECS par IX</option>
+                   
+                </select>
+        
+            <!-- Paragraphes pour Page 1 -->      
+         
+            
+                <!-- Paragraphes à afficher en fonction de la sélection -->
+                <div id="page1-ecs-mmtc" class="content page1">
+                    <p>La production d’ecs est assurée par une pompe à chaleur monobloc R32 via un régulateur Diemacontrol qui gère la T°C de consigne du préparateur ecs. </p>
+                    <p>Le bouclage ecs est indépendamment géré par un réchauffeur électrique.</p>
+                    <p> Le ballon tampon installé sur le retour est prévu pour garantir un volume minimum dans l’installation qui doit être supérieure à 5 L/KW et ainsi éviter les courts cycle et assurer une réserve d’énergie lors des dégivrages.</p> 
+                    <p> Si la température du préparateur ecs devra être supérieure à 60°C, la résistance électrique prendra la relève et fera le complément.</p>
+                        
+                        
+                    </p>
+                </div>
+
+                <div id="page1-ecs-chauffage-mmtc" class="content page1">
+                    
+                    <p>La production chauffage est assurée par pompe à chaleur monobloc R32 grâce au régulateur Diemacontrol qui gère la T°consigne suivant pente de chauffe adaptée optimisée pour radiateurs chaleur douce. </p>
+                    <p>Si la PAC ne peut suffire pour garantir le confort, l’appoint électrique (1 ou 2 étages) embarqué dans le ballon tampon est appelé pour faire le complément d’énergie si nécessaire. </p>
+                                       
+                    <p>La production d’ECS est assurée par ces mêmes pompes à chaleur monobloc R32 via le régulateur Diemacontrol qui gère la T°C de consigne du préparateur ECS. </p>
+                    <p> Le bouclage sanitaire est indépendamment géré par un réchauffeur électrique.</p>
+                    <p> Pilotée par le régulateur Diemacontrol, la résistance électrique embarquée dans le préparateur assure le complément fin de charge sanitaire.</p>
+                        
+
+                    
+                </div>
+                <div id="page1-chauffageMMTC-ecsIX" class="content page1">
+                    <p>La production chauffage est assurée par pompe à chaleur monobloc R32 grâce au régulateur Diemacontrol qui gère la T°consigne suivant pente de chauffe adaptée optimisée pour PCBT. </p>
+                     <p> Si la PAC ne peut suffire pour garantir le confort, la chaudière IX est appelée pour faire le complément d’énergie via un contact sec. </p>
+                     <p> La priorité au fonctionnement PAC permet de réduire considérablement l’empreinte carbone de l’installation. </p> 
+                     <p>La production sanitaire est assurée quant à elle par la chaudière en direct qui permet une production semi-accumulée. La chaudière assure également le complément d’énergie nécessaire pour vaincre les déperditions du bouclage sanitaire si présent. </p>
+                        
+                </div>
+              
+            
+       
+            </div>
+
+            <!-- Solutions Pages -->
+
+             <!-- Solutions Pages -->
+            <div id="solution-1" class="page ">
+                <h3>Schéma de principe 1</h3>          
+                <select id="imageSelector2" onchange="displayImage('imageSelector2', 'imageDisplay2')">
+                    <option value="" disabled selected>Sélectionnez un schéma</option>
+                    <option value="schema1.png">1 MMTC chauffage + ECS</option>
+                    <option value="schema2.png">2 MMTC chauffage + ECS</option>
+                    <option value="Schema_ecs_1MMTC.png">1 MMTC pour ECS seul</option>
+                </select>
+                
+                <div id="imageDisplay2" class="image-container">
+                    <p>Aucune image sélectionnée pour l'instant.</p>
+                </div>
+            </div>
+
+            <div id="solution-2" class="page" >
+                <h3>Schéma de principe 2</h3>  
+                    <select id="imageSelector3" onchange="displayImage('imageSelector3', 'imageDisplay3')">
+                    <option value="" disabled selected>Sélectionnez un schéma</option>
+                    <option value="schema1.png">1 MMTC chauffage + ECS</option>
+                    <option value="schema2.png">2 MMTC chauffage + ECS</option>
+                    <option value="Schema_ecs_1MMTC.png">1 MMTC pour ECS seul</option>
+                </select>
+
+                <div id="imageDisplay3" class="image-container">
+                    <p>Aucune image sélectionnée pour l'instant.</p>
+                </div>
+            </div>
+
+
+            <div id="solution-3" class="page ">
+                <h3>Schéma de principe 3</h3>  
+                <select id="imageSelector4" onchange="displayImage('imageSelector4', 'imageDisplay4')">
+                    <option value="" disabled selected>Sélectionnez un schéma</option>
+                    <option value="schema1.png">1 MMTC chauffage + ECS</option>
+                    <option value="schema2.png">2 MMTC chauffage + ECS</option>
+                    <option value="Schema_ecs_1MMTC.png">1 MMTC pour ECS seul</option>
+                </select>
+
+                <div id="imageDisplay4" class="image-container">
+                    <p>Aucune image sélectionnée pour l'instant.</p>
+                </div>
+
+                
+            </div>
+
+            <!-- Groups Pages -->
+            <div id="MMTC" class="page-group">
+                <div class= "page"> 
+                 <!-- Documentations MMTC -->
+                 <img src="Requis.png" alt="REquis MMTC"  width=100%>
+                 </div>
+                <div class= "page"> 
+                <!-- Documentations MMTC -->
+                <img src="Dimensions MMTC.png" alt="Dimension MMTC"  width=100%>
+                </div>
+                <div class= "page"> 
+                <!-- Documentations MMTC -->
+                <img src="Caract tech MMTC.png" alt="caractéristique tech MMTC"  width=100%>
+                </div>
+                <div class= "page"> 
+                <!-- Documentations MMTC -->
+                <img src="Espacement MMTC.png" alt="Espacement MMTC"  width=100%>
+                </div>
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                    <img src="Debit pompe MMTC.png" alt="Debit MMTC"  width=100%>
+                </div>
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                    <img src="Electrique acoustique MMTC.png" alt="Electricite acoustique"  width=100%>
+                </div>
+                
+                     
+                 
+             
+            </div>
+            <div id="IX" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="Caract_tech_IX.png" alt="caractéristique IX"  width=100%>
+                    </div>
+                
+            </div>
+
+            <div id="IX-M" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="Caract_tech_IX-M.png" alt="caractéristique IX-M"  width=100%>
+                    </div>
+                
+            </div>
+
+            <div id="Annexe" class="page">
+                <h2 id="title_annexe">ANNEXES</h2>             
+           </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="script11.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+ 
+
+</body>
+
+
+</html>
