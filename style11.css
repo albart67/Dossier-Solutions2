@@ -68,6 +68,14 @@ body {
 
 } 
 
+.page-schema {
+    display: none; /* Masquer toutes les pages par défaut */
+}
+
+.page-schema.active {
+    display: block; /* Afficher uniquement les pages avec la classe active */
+}
+
 .page-group {
     display: none;
     width: 21cm;
@@ -181,21 +189,82 @@ body {
 
 
 /*Etat des Lieux et hypothèses du dossier*/
-#commentaire {
+#etat_lieu {
     width: 700px;
-    height: 250px;
+    height: 50px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical; /* Permet de redimensionner uniquement verticalement */
-
 }
+
+.hypothese {
+   
+        width: 700px;
+        height: 50px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical; /* Permet de redimensionner uniquement verticalement */
+    
+}
+/* Stylisation du conteneur pour répartir les éléments sur la largeur de la page */
+.radio-group-donnees {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    max-width: 210mm; /* Taille d'une feuille A4 */
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.radio-group-donnees label {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group-donnees input[type="radio"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.radio-group-donnees .label-text {
+    text-align: center;
+}
+
+
+/* Optionnel: pour centrer le texte dans chaque bouton/label */
+.label-text {
+    text-align: center;
+    width: 100%;  /* Chaque label s'étend également */
+}
+
+h4 {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+
 
 /*Selection des solutions*/
 #solutions {
     font-weight: bold ;   
 }
+
+#commentaire_solution {
+    width: 700px;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Permet de redimensionner uniquement verticalement */
+}
+
 
 /*Selection des Synoptique*/
 #selection1 {
@@ -240,7 +309,11 @@ body {
 }
 
 #title_annexe {
-     font-size: 100px;
+
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Position, flou et couleur de l'ombre */
+     font-size: 40px; /* Taille du titre */
+     color: #333; /* Couleur du texte */
+     font-size: 100px;    
     
 }
 

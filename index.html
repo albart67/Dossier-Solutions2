@@ -214,15 +214,72 @@
             
                 <h2>Situation de l’installation actuelle :</h2>
             
-                <textarea id="commentaire" name="commentaire" placeholder="Tapez votre texte ici..."></textarea>
-            
+                <textarea id="etat_lieu" name="etat_lieu" placeholder="Tapez votre texte ici..."></textarea>
+                <br>
+                <br>
                 
                 <h2>Evaluations & Hypothèses (vérifier et confirmer) :</h2>
             
+                <h4>Infos déperditions chauffage / Surface à chauffer / Hauteur sous plafond</h4>
+                <div class="radio-group-donnees">
+                    <label>
+                        <input type="radio" id="donnees" name="selection-donnees1" value="donnees" checked>
+                        <span class="label-text">Données</span>
+                    </label>
+                
+                    <label>
+                        <input type="radio" id="hypotheses" name="selection-donnees1" value="hypotheses" >
+                        <span class="label-text">Hypothèses</span>
+                    </label>
+                
+                    <label>
+                        <input type="radio" id="non-concerne" name="selection-donnees1" value="non-concerne">
+                        <span class="label-text">Non concerné</span>
+                    </label>
+                </div>
+                
+                
+                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Tapez votre texte ici..."></textarea>
+
+                <h4>Régime de T° des circuits:</h4>
+                <div class="radio-group-donnees">
+                    <label>
+                        <input type="radio" id="donnees2" name="selection-donnees2" value="donnees" checked>
+                        <span class="label-text">Données</span>
+                    </label>
+                
+                    <label>
+                        <input type="radio" id="hypotheses" name="selection-donnees2" value="hypotheses">
+                        <span class="label-text">Hypothèses</span>
+                    </label>
+                
+                    <label>
+                        <input type="radio" id="non-concerne" name="selection-donnees2" value="non-concerne">
+                        <span class="label-text">Non concerné</span>
+                    </label>
+                </div>
+                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Tapez votre texte ici..."></textarea>
             
-                <textarea id="commentaire" name="commentaire" placeholder="Tapez votre texte ici..."></textarea>
-            
-            
+                <h4>Besoins sanitaires:</h4>
+                <div class="radio-group-donnees">
+                    <label>
+                        <input type="radio" id="donnees3" name="selection-donnees3" value="donnees" checked>
+                        <span class="label-text">Données</span>
+                    </label>
+                
+                    <label>
+                        <input type="radio" id="hypotheses" name="selection-donnees3" value="hypotheses">
+                        <span class="label-text">Hypothèses</span>
+                    </label>
+                
+                    <label>
+                        <input type="radio" id="non-concerne" name="selection-donnees3" value="non-concerne">
+                        <span class="label-text">Non concerné</span>
+                    </label>
+                </div>
+                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Tapez votre texte ici..."></textarea>
+
+               
                 <p class="note"><i>Ces valeurs et résultats sont donnés à titre indicatif ; la responsabilité de De Dietrich ne peut en aucun cas être engagée.</i></p>
             
             </div>
@@ -249,7 +306,7 @@
                     <option value="prechauffage-ecs-pac">Solution préchauffage ECS par PAC</option>
                 </select>           
             
-                <textarea id="commentaire" name="commentaire" placeholder="Tapez votre texte ici..."></textarea>               
+                <textarea id="commentaire_solution" name="commentaire" placeholder="Tapez votre texte ici..."></textarea>               
         
                 <br>
                 <br>        
@@ -305,13 +362,14 @@
             <!-- Solutions Pages -->
 
              <!-- Solutions Pages -->
-            <div id="solution-1" class="page ">
+            <div id="solution-1" class="page page-schema">
                 <h3>Schéma de principe 1</h3>          
                 <select id="imageSelector2" onchange="displayImage('imageSelector2', 'imageDisplay2')">
                     <option value="" disabled selected>Sélectionnez un schéma</option>
-                    <option value="schema1.png">1 MMTC chauffage + ECS</option>
-                    <option value="schema2.png">2 MMTC chauffage + ECS</option>
-                    <option value="Schema_ecs_1MMTC.png">1 MMTC pour ECS seul</option>
+                    <option value="2 MMTC_chauffage.png">1 MMTC chauffage + ECS</option>
+                    <option value="1 MMTC_chauffage_ECS_VI.png">1 MMTC chauffage + ECS</option>
+                    <option value="2 MMTC_chauffage_IX_appoint.png">2 MMTC chauffage + ECS</option>
+                    <option value="2 MMTC_chauffage_IX-EP_sanitaire.png">1 MMTC pour ECS seul</option>
                 </select>
                 
                 <div id="imageDisplay2" class="image-container">
@@ -319,13 +377,14 @@
                 </div>
             </div>
 
-            <div id="solution-2" class="page" >
+            <div id="solution-2" class="page page-schema" >
                 <h3>Schéma de principe 2</h3>  
                     <select id="imageSelector3" onchange="displayImage('imageSelector3', 'imageDisplay3')">
                     <option value="" disabled selected>Sélectionnez un schéma</option>
-                    <option value="schema1.png">1 MMTC chauffage + ECS</option>
-                    <option value="schema2.png">2 MMTC chauffage + ECS</option>
-                    <option value="Schema_ecs_1MMTC.png">1 MMTC pour ECS seul</option>
+                    <option value="2 MMTC_chauffage.png">1 MMTC chauffage + ECS</option>
+                    <option value="1 MMTC_chauffage_ECS_VI.png">1 MMTC chauffage + ECS</option>
+                    <option value="2 MMTC_chauffage_IX_appoint.png">2 MMTC chauffage + ECS</option>
+                    <option value="2 MMTC_chauffage_IX-EP_sanitaire.png">2 MMTC pour chauffage appoint IX-EP + ECS</option>
                 </select>
 
                 <div id="imageDisplay3" class="image-container">
@@ -334,13 +393,14 @@
             </div>
 
 
-            <div id="solution-3" class="page ">
+            <div id="solution-3" class="page page-schema">
                 <h3>Schéma de principe 3</h3>  
                 <select id="imageSelector4" onchange="displayImage('imageSelector4', 'imageDisplay4')">
                     <option value="" disabled selected>Sélectionnez un schéma</option>
-                    <option value="schema1.png">1 MMTC chauffage + ECS</option>
-                    <option value="schema2.png">2 MMTC chauffage + ECS</option>
-                    <option value="Schema_ecs_1MMTC.png">1 MMTC pour ECS seul</option>
+                    <option value="2 MMTC_chauffage.png">1 MMTC chauffage + ECS</option>
+                    <option value="1 MMTC_chauffage_ECS_VI.png">1 MMTC chauffage + ECS</option>
+                    <option value="2 MMTC_chauffage_IX_appoint.png">2 MMTC chauffage + ECS</option>
+                    <option value="2 MMTC_chauffage_IX-EP_sanitaire.png">1 MMTC pour ECS seul</option>
                 </select>
 
                 <div id="imageDisplay4" class="image-container">
