@@ -66,7 +66,10 @@ body {
     background-color: white;
     page-break-after: always; 
 
+
 } 
+
+
 
 .page-schema {
     display: none; /* Masquer toutes les pages par défaut */
@@ -103,14 +106,47 @@ body {
     width:100%;
 }
 
-.grand-caractere {
-    font-size: 24px;
+/* .grand-caractere {
+    font-size: 15px;
     padding: 10px;  
-    width: 100%;     
+    width: 100%;   
+    height: 80px;  
     box-sizing: border-box; 
     display: block;
     margin: 0,auto;
+} */
+
+.grand-caractere {
+    font-size: 20px;
+    padding: 5px;  
+    width: 67%; /* Définit la largeur à 70% de la page */
+    height: calc(1.7em * 3); /* Hauteur pour 3 lignes de texte */
+    box-sizing: border-box; 
+    display: block; 
+    margin: 0 auto; /* Centrage horizontal */
+    text-align: center; /* Centre le texte horizontalement */
+    line-height: 1.5em;
+    resize: none;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
+
+.titre-projet {
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items:start; /* Aligne verticalement */
+}
+
+label {
+    margin-right: 10px; /* Espace entre "Projet:" et le cadre */
+    font-size: 15px;
+}
+
+
+
+
+
 
 .info {
     display: flex;
@@ -120,14 +156,68 @@ body {
 }
 
 #Entreprise {
+    font-size: 15px;
+    padding: 5px;  
+    width: 250px; /* Définit la largeur à 70% de la page */
+    height: calc(1.7em * 3); /* Hauteur pour 3 lignes de texte */
+    box-sizing: border-box; 
+    display: block; 
+   
+    /* text-align: center; */
+    line-height: 1.5em;
+    resize: none;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+
+
+/* 
+
     height: 30px;
     font-size: 20px;
     width: 250px;
-    border: 1px solid lightgray; 
+    border: 1px solid lightgray;  */
 
 }
 
-#Opportunite{
+.dest-container {
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    align-items: flex-start; /* Aligne le label en haut à gauche */
+}
+
+label {
+    margin-right: 5px; /* Espace entre le label et le textarea */
+}
+
+
+.opp-etude-container {
+    display: flex;
+    flex-direction: column; /* Aligne les groupes d'input verticalement */
+}
+
+.input-group {
+    display: flex; /* Utilise Flexbox pour aligner le label et l'input sur la même ligne */
+    align-items: center; /* Aligne verticalement au centre */
+    margin-bottom: 15px; /* Espacement entre les groupes d'input */
+}
+
+.info label {
+    margin-right: 10px; /* Espace entre le label et l'input */
+    min-width: 140px; /* Largeur minimum pour aligner les labels */
+}
+
+input text {
+    width: 70%; /* Ajuste la largeur de l'input à 100% du conteneur */
+    padding: 8px; /* Ajoute un peu de padding à l'input */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+
+  
+}
+
+
+
+/* #Opportunite{
             
     margin-bottom: 10px; 
     display: block; 
@@ -139,12 +229,22 @@ body {
     border: 1px solid lightgray;
     height: 20px;
     display: block; 
-}
+} */
+
+
+
+
+
+
 
 #date-selection {
     border: none;
     font-size: 18px;
 }
+
+
+
+
 
 #menu-commerciaux {
     border:rgb(20, 2, 2);

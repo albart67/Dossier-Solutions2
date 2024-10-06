@@ -45,8 +45,15 @@
                     
                 </header>
         
-                <h1><input type="text" class="grand-caractere" placeholder="Titre chantier..."></h1>
+                <!-- <input type="text" class="grand-caractere" placeholder="Titre chantier..."> -->
        
+                <div class="titre-projet">
+                    <label class="titre" for="textarea"><b>Projet:</b></label>
+                    <textarea id="textarea" class="grand-caractere"></textarea>
+                </div>
+
+                <br>
+                
 
             
                         
@@ -54,16 +61,40 @@
                         <div class="info">
                             <div>
                                 <div>
-            
-                                <h2><label for="Entreprise"><strong>Entreprise:</strong></label>
-                                <input type="text" id="Entreprise" name="Entreprise"></h2>
-            
-                                <label for="Opportunité" id="test"><strong>Opportunité:</strong></label>
-                                <input type="text" id="Opportunite" name="Opportunité">
+
+                                    <div class="dest-container">
+                                        <label class="Destinataire"><strong>Destinataire:</strong></label>
+                                        <textarea id="Entreprise" name="Entreprise"></textarea>
+                                    </div>
+                                 <br>   
+                                    
                                 
+                                <!-- <h2><label for="Destinataire"><strong>Destinataire:</strong></label>
+                                <textarea id="Entreprise" name="Entreprise"></textarea> -->
             
-                                <label id = "label-nr" for="Etude"><strong>Numéro Etude:</strong></label>
-                                <input type="text" id="Etude" name="Etude">                               
+                                <!-- <label for="Opportunité" id="test"><strong></strong></label> -->
+                                <div class="opp-etude-container">
+                                    <div class="input-group">
+                                        <label id="test" for="Opportunité"><strong>Nr Opportunité:</strong></label>
+                                        <input  class="text" id="Opportunite" name="Opportunité">
+                                    </div>
+                                    
+                                    <div class="input-group">
+                                        <label id="label-nr" for="Etude"><strong>Nr Etude:</strong></label>
+                                        <input type="text" id="Etude" name="Etude">
+                                    </div>
+                                </div>
+                                        
+
+
+                                <!-- <label id="test" for="Opportunité" style="display: inline-block;"><strong>Nr Opportunité:</strong></label>
+                                <input type="text" id="Opportunite" name="Opportunité" style="display: inline-block;">
+                                <br>
+                                <label id="label-nr" for="Etude" style="display: inline-block;"><strong>Nr Etude:</strong></label>
+                                <input type="text" id="Etude" name="Etude" style="display: inline-block;"> -->
+
+                                <!-- <label id = "label-nr" for="Etude"><strong>Numéro Etude:</strong></label>
+                                <input type="text" id="Etude" name="Etude">                                -->
                       
             
                             </div>
@@ -112,20 +143,38 @@
             
                             <div>
                                 <h3><label for="nom">Interlocuteur Commercial / Prescripteur:</label></h3> 
+
+
+                                <div class="opp-etude-container">
+                                    <div class="input-group">
+                                        <label id="nom_commercial" for="Commercial"><strong>Nom:</strong></label>
+                                        <input type="text" id="Name_commercial" name="Commercial">
+                                    </div>
+                                    
+                                    <div class="input-group">
+                                        <label id="teleph_com" for="Telephone"><strong>Tel:</strong></label>
+                                        <input type="text" id="tel" name="Telephone">
+                                    </div>
+                                    <div class="input-group">
+                                        <label id="email-com" for="email"><strong>Email:</strong></label>
+                                        <input type="text" id="email-com2" name="email">
+                                    </div>
+                                </div>
+
             
                                     <!-- Menu déroulant pour sélectionner un commercial -->
-                                 <select id="menu-commerciaux" onchange="afficherInfoCommercial()">
+                                 <!-- <select id="menu-commerciaux" onchange="afficherInfoCommercial()">
                                     <option value="">Sélectionnez un commercial</option>
                                     <option value="john">John Doe</option>
                                     <option value="jane">Jane Smith</option>
                                     <option value="paul">Paul Dupont</option>
                                     <option value="anne">Anne Durand</option>
-                                </select>
+                                </select> -->
             
                                     <!-- Section pour afficher les informations du commercial -->
-                                <div id="info-commercial">
+                                <!-- <div id="info-commercial"> -->
                                     <!-- Les informations s'afficheront ici -->
-                                </div>
+                                <!-- </div> -->
             
 
                                 </div>
@@ -190,12 +239,12 @@
                         <h2>ANNEXES</h2>
                         <ul>
                             <li>Pré-Simulation énergétique</li>
-                            <li>Fiches saisie RE2020</li>
+                  
                             <li>Services dédiés</li>
                         </ul>
                         <br>
                 
-                        <h2>Offre de prix PPHT</h2>
+                        <h2>Offre de prix</h2>
                         <ul>
                             <li>Conditions générales de vente</li>
                         </ul>
