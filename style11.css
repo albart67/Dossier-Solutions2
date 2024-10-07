@@ -116,31 +116,37 @@ body {
     margin: 0,auto;
 } */
 
-.grand-caractere {
+ .grand-caractere {
     font-size: 20px;
     padding: 5px;  
     width: 67%; /* Définit la largeur à 70% de la page */
     height: calc(1.7em * 3); /* Hauteur pour 3 lignes de texte */
     box-sizing: border-box; 
     display: block; 
-    margin: 0 auto; /* Centrage horizontal */
+    margin-left: 100px; /* Centrage horizontal */
     text-align: center; /* Centre le texte horizontalement */
     line-height: 1.5em;
     resize: none;
     overflow: hidden;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordure fine et semi-transparente */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    padding: 10px; /* Espacement interne pour l’aération */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
 }
 
 .titre-projet {
     display: flex;
-    justify-content: center; /* Centre le contenu horizontalement */
+    
     align-items:start; /* Aligne verticalement */
 }
 
-label {
-    margin-right: 10px; /* Espace entre "Projet:" et le cadre */
-    font-size: 15px;
+label .titre {
+ 
+    font-size: 20px;
+    justify-content: left;
 }
 
 
@@ -170,6 +176,11 @@ label {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordure fine et semi-transparente */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    padding: 10px; /* Espacement interne pour l’aération */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
+
 
 
 /* 
@@ -184,11 +195,10 @@ label {
 .dest-container {
     display: flex; /* Utilise Flexbox pour aligner les éléments */
     align-items: flex-start; /* Aligne le label en haut à gauche */
+
+    
 }
 
-label {
-    margin-right: 5px; /* Espace entre le label et le textarea */
-}
 
 
 .opp-etude-container {
@@ -207,11 +217,20 @@ label {
     min-width: 140px; /* Largeur minimum pour aligner les labels */
 }
 
+.info input {
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordure fine et semi-transparente */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    padding: 5px; /* Espacement interne pour l’aération */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
+    height: 15px;
+}
+
 input text {
     width: 70%; /* Ajuste la largeur de l'input à 100% du conteneur */
     padding: 8px; /* Ajoute un peu de padding à l'input */
     box-sizing: border-box; /* Inclut le padding dans la largeur totale */
 
+    
   
 }
 
@@ -311,18 +330,55 @@ input text {
     
 }
 /* Stylisation du conteneur pour répartir les éléments sur la largeur de la page */
+
+.hypotheses-donnees {
+    display: flex; /* Utilise Flexbox pour aligner les éléments sur la même ligne */
+    justify-content:space-between; /* Met de l'espace entre le titre et le groupe radio */
+    align-items: center; /* Centre les éléments verticalement */
+    max-width: 90%;
+  
+}
+
+#page3 textarea {
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordure fine et semi-transparente */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    padding: 10px; /* Espacement interne pour l’aération */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
+    
+}
+
+#page4 input {
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordure fine et semi-transparente */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    padding: 10px; /* Espacement interne pour l’aération */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
+}
+
+#page4 textarea {
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordure fine et semi-transparente */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    padding: 10px; /* Espacement interne pour l’aération */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
+}
+
 .radio-group-donnees {
     display: flex;
-    justify-content: left;
-    width: 100%;
-    max-width: 210mm; /* Taille d'une feuille A4 */
-    margin: 0 auto;
+    justify-content: right;
+    /* width: 70%; */
+    
+    margin: 0 10px;
     padding: 5px;
+    
+    gap: 10px; /* Espace entre les options radio */
 }
+
+
 
 .radio-group-donnees label {
     display: flex;
     align-items: center;
+
+
 }
 
 .radio-group-donnees input[type="radio"] {
@@ -355,9 +411,38 @@ h4 {
     font-weight: bold ;   
 }
 
-#commentaire_solution {
+
+.solutions-donnes {
+    margin: 0 30px 0 0px;
+    display: flex;
+    flex-direction: column; /* Aligne les groupes de saisie verticalement */
+    gap: 15px; /* Espace entre chaque ligne */
+}
+
+.input-group2 {
+    display: flex; /* Aligne le label et l'input sur la même ligne */
+    justify-content: space-between; /* Espacement entre le label et le champ de saisie */
+    align-items: center; /* Centre verticalement les éléments */
+}
+
+.solutions-donnes label {
+    min-width: 150px; /* Largeur fixe pour les labels afin qu'ils soient alignés */
+    margin-right: 10px; /* Espace entre le label et le champ de saisie */
+
+    
+}
+
+.solutions-donnes input {
+    flex: 1; /* Remplit l'espace disponible */
+    padding: 8px; /* Padding interne du champ */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+
+
+#commentaire_solution  {
     width: 700px;
-    height: 150px;
+    height: 200px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -365,11 +450,39 @@ h4 {
     resize: vertical; /* Permet de redimensionner uniquement verticalement */
 }
 
+#performances_solution  {
+    width: 700px;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Permet de redimensionner uniquement verticalement */
+}
+
+#autre-synoptique {
+    width: 700px;
+    height: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Permet de redimensionner uniquement verticalement */
+}
 
 /*Selection des Synoptique*/
 #selection1 {
     font-weight: bold;
 }
+
+
+
+
+/* Par défaut, toutes les solutions sont masquées */
+[id^="solution-"] {
+    display: none; /* Cache toutes les solutions */
+}
+
 
 
 

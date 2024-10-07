@@ -34,20 +34,36 @@ function togglePages(groupId) {
 }
 
 
-// Fonction pour afficher le nombre de pages "Schéma" sélectionnées
+
 function displaySolutions() {
     const solutionCount = document.getElementById("solutions-count").value;
 
     // Cacher toutes les pages de solutions
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 0; i <= 3; i++) {
         document.getElementById(`solution-${i}`).classList.remove('active');
     }
 
-    // Afficher les pages de solutions en fonction du nombre sélectionné
-    for (let i = 1; i <= solutionCount; i++) {
-        document.getElementById(`solution-${i}`).classList.add('active');
+    // Afficher "solution-0" par défaut et cacher "solution-01"
+    if (solutionCount === "0") {
+        document.getElementById('solution-0').classList.add('active');
+        document.getElementById('solution-01').classList.remove('active');
+
+    } else {
+        // Cacher "solution-0" et afficher "solution-01" ainsi que les autres pages
+        
+        for (let i = 1; i <= solutionCount; i++) {
+            document.getElementById(`solution-${i}`).classList.add('active');
+            document.getElementById(`solution-01`).classList.add('active');
+        }
     }
 }
+
+// Fonction pour afficher "solution-0" par défaut au chargement de la page
+window.onload = function() {
+    document.getElementById('solution-0').classList.add('active');
+};
+
+
 
 
 //Fonction pour afficher les schémas 

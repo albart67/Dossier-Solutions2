@@ -75,7 +75,7 @@
                                 <!-- <label for="Opportunité" id="test"><strong></strong></label> -->
                                 <div class="opp-etude-container">
                                     <div class="input-group">
-                                        <label id="test" for="Opportunité"><strong>Nr Opp:</strong></label>
+                                        <label id="test" for="Opportunité"><strong>Nr Opportunité:</strong></label>
                                         <input  class="text" id="Opportunite" name="Opportunité">
                                     </div>
                                     
@@ -195,7 +195,7 @@
                             </div>
                             
                         </div>
-                            <img src="page de garde photo.png"  id = "pic-entreprise" alt="photo entreprise" width="700">
+                            <img src="page de garde photo.png"  id = "pic-entreprise" alt="photo entreprise" width="600">
 
                             <footer class="print-footer">
 
@@ -269,7 +269,8 @@
                 
                 <h2>Evaluations & Hypothèses (vérifier et confirmer) :</h2>
             
-                <h4>Infos déperditions chauffage / Surface à chauffer / Hauteur sous plafond</h4>
+                <div class="hypotheses-donnees">
+                <h4>Chauffage:</h4>
                 <div class="radio-group-donnees">
                     <label>
                         <input type="radio" id="donnees" name="selection-donnees1" value="donnees" checked>
@@ -280,17 +281,19 @@
                         <input type="radio" id="hypotheses" name="selection-donnees1" value="hypotheses" >
                         <span class="label-text">Hypothèses</span>
                     </label>
-                
-                    <label>
+                </div>
+                    <!-- <label>
                         <input type="radio" id="non-concerne" name="selection-donnees1" value="non-concerne">
                         <span class="label-text">Non concerné</span>
-                    </label>
+                    </label> -->
                 </div>
                 
                 
-                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Tapez votre texte ici..."></textarea>
+                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Déperdtions, surface, volume à chauffer..."></textarea>
 
-                <h4>Régime de T° des circuits:</h4>
+                <div class="hypotheses-donnees">
+
+                <h4>Circuits secondaires:</h4>
                 <div class="radio-group-donnees">
                     <label>
                         <input type="radio" id="donnees2" name="selection-donnees2" value="donnees" checked>
@@ -302,14 +305,16 @@
                         <span class="label-text">Hypothèses</span>
                     </label>
                 
-                    <label>
+                    <!-- <label>
                         <input type="radio" id="non-concerne" name="selection-donnees2" value="non-concerne">
                         <span class="label-text">Non concerné</span>
-                    </label>
+                    </label> -->
                 </div>
-                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Tapez votre texte ici..."></textarea>
+                </div>
+                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Régime de T° des circuits, nombre..."></textarea>
             
-                <h4>Besoins sanitaires:</h4>
+                <div class="hypotheses-donnees">
+                <h4>Sanitaire:</h4>
                 <div class="radio-group-donnees">
                     <label>
                         <input type="radio" id="donnees3" name="selection-donnees3" value="donnees" checked>
@@ -321,17 +326,37 @@
                         <span class="label-text">Hypothèses</span>
                     </label>
                 
-                    <label>
+                    <!-- <label>
                         <input type="radio" id="non-concerne" name="selection-donnees3" value="non-concerne">
                         <span class="label-text">Non concerné</span>
-                    </label>
+                    </label> -->
                 </div>
-                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Tapez votre texte ici..."></textarea>
+                </div>
+                <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Besoin ECS, hypothèses de consommation..."></textarea>
+
+                <div class="hypotheses-donnees">
+                    <h4>Rafraichissement:</h4>
+                    <div class="radio-group-donnees">
+                        <label>
+                            <input type="radio" id="donnees3" name="selection-donnees3" value="donnees" checked>
+                            <span class="label-text">Données</span>
+                        </label>
+                    
+                        <label>
+                            <input type="radio" id="hypotheses" name="selection-donnees3" value="hypotheses">
+                            <span class="label-text">Hypothèses</span>
+                        </label>
+                    
+                 
+                    </div>
+                    </div>
+                    <textarea id="hypothese1" name="hypothese1" class="hypothese" placeholder="Puissance froid nécessaire..."></textarea>
 
                
                 <p class="note"><i>Ces valeurs et résultats sont donnés à titre indicatif ; la responsabilité de De Dietrich ne peut en aucun cas être engagée.</i></p>
             
             </div>
+
 
 
             <div id="page4" class="page">
@@ -342,23 +367,66 @@
                 <br>
             
                 <h2>Notre solution adapté à votre besoin</h2>      
-                  <br>
+              
         
         
                 <!-- <label for="solutions">Choisissez une solution :</label> -->
-                <select id="solutions" name="solutions">
+                <!-- <select id="solutions" name="solutions">
                     <option value="chauffage">Solution chauffage</option>
                     <option value="sanitaire">Solution sanitaire</option>
                     <option value="solaire">Solution solaire</option>
                     <option value="hybride">Solution hybride</option>
                     <option value="prechauffage-ecs-solaire">Solution préchauffage ECS solaire</option>
                     <option value="prechauffage-ecs-pac">Solution préchauffage ECS par PAC</option>
-                </select>           
+                </select>    -->
+
+                <br>
+                <br>
+                
+                <div class="solutions-donnes">
+                    <div class="input-group2">
+                        <label for="generateur">Générateur:</label>
+                        <input type="text" id="generateur" name="generateur">
+                    </div>
+                    
+                    <div class="input-group2">
+                        <label for="appoint">Appoint:</label>
+                        <input type="text" id="appoint" name="appoint">
+                    </div>
+                    
+                    <div class="input-group2">
+                        <label for="volume-tampon">Volume Tampon:</label>
+                        <input type="text" id="volume-tampon" name="volume-tampon">
+                    </div>
+                    
+                    <div class="input-group2">
+                        <label for="production-ecs">Production ECS:</label>
+                        <input type="text" id="production-ecs" name="production-ecs">
+                    </div>
+                </div>
+
+                <br>
+                
             
-                <textarea id="commentaire_solution" name="commentaire" placeholder="Tapez votre texte ici..."></textarea>               
+                <textarea id="commentaire_solution" name="commentaire" placeholder="Description de la solution..."></textarea>               
         
                 <br>
-                <br>        
+                <br> 
+
+                <h2>Performances attendues/Taux de couveture</h2>   
+
+                <textarea id="performances_solution" name="performance" placeholder="Résultats études..."></textarea>   
+                
+            </div>
+                
+                
+            <div id="solution-01" class="page page-schema">
+
+
+
+
+                
+           
         
                 <label for="selection1"><h3><u>Synoptique de fonctionnement :</u></h3></label>
           
@@ -406,9 +474,24 @@
               
             
        
-            </div>
+           
+        </div>
+
+
+        <div id="solution-0" class="page page-schema">
+
+            <h2>Synoptique de fonctionnement </h2>   
+
+            <h3><i>(Schéma de principe en pièce jointe)</i></h3>
+
+            <textarea id="autre-synoptique" name="performance" placeholder="Descriptif du fonctionnement..."></textarea> 
+
+
+
+        </div>
 
             <!-- Solutions Pages -->
+
 
              <!-- Solutions Pages -->
             <div id="solution-1" class="page page-schema">
