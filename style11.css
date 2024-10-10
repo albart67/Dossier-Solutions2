@@ -478,14 +478,6 @@ h4 {
 
 
 
-/* Par défaut, toutes les solutions sont masquées */
-[id^="solution-"] {
-    display: none; /* Cache toutes les solutions */
-}
-
-
-
-
 
 /*Affichage des schéma*/
 .schema {
@@ -577,6 +569,7 @@ h4 {
         page-break-after: always;   
     }
 }
+
 
 
 
