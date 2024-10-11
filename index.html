@@ -29,9 +29,16 @@
             <h3>Documents produits présents dans le dossier Solutions:</h3>
 
             <button class="menu-button" onclick="togglePages('MMTC')">MMTC</button>
-            <button class="menu-button" onclick="togglePages('IX')">IX</button>
+            <button class="menu-button" onclick="togglePages('IX_145')">IX 145</button>
+            <button class="menu-button" onclick="togglePages('IX_145_casc')">IX 145 CASCADE</button>
+            <button class="menu-button" onclick="togglePages('IX_245')">IX 245</button>
+            <button class="menu-button" onclick="togglePages('IX_245_casc')">IX 245 CASCADE</button>
             <button class="menu-button" onclick="togglePages('IX-M')">IX-M</button>
             <button class="menu-button" onclick="togglePages('AMC_PRO')">AMC PRO</button>
+            <button class="menu-button" onclick="togglePages('MCA_160')">MCA 160</button>
+            <button class="menu-button" onclick="togglePages('C230')">C230</button>
+            <button class="menu-button" onclick="togglePages('C340/C640')">C340/C640</button>
+            <button class="menu-button" onclick="togglePages('ballon_B')">Ballons B</button>
 
 
 
@@ -145,8 +152,8 @@
                                 <h3><label for="nom">Interlocuteur Commercial / Prescripteur:</label></h3> 
 
 
-                                <div class="opp-etude-container">
-                                    <div class="input-group">
+                                <div class="opp-etude-container donnees-commercial">
+                                    <div class="input-group ">
                                         <label id="nom_commercial" for="Commercial"><strong>Nom:</strong></label>
                                         <input type="text" id="Name_commercial" name="Commercial">
                                     </div>
@@ -240,7 +247,7 @@
                         <ul>
                             <li>Pré-Simulation énergétique</li>
                   
-                            <li>Services dédiés</li>
+                         
                         </ul>
                         <br>
                 
@@ -434,9 +441,14 @@
           
                 <select class="menu-selection" id="selection1" name="selection1">
                     <option value="">-- Sélectionnez une option --</option>
-                    <option value="ecs-mmtc">ECS par MMTC</option>
-                    <option value="ecs-chauffage-mmtc">ECS et chauffage par MMTC</option>
-                    <option value="chauffageMMTC-ecsIX">Chauffage par MMTC et ECS par IX</option>
+                    <option value="ecs-mmtc">ECS 100% MMTC (log.A)</option>
+                    <option value="ecs-prech-mmtc">Préchauffage ECS par PAC MMTC R32 (log.B)</option>
+                    <option value="chauffage-MMTC">Chauffage 100% Electrique MMTC + Résistance (log.C)</option>
+                    <option value="chauffage-MMTC-appoint_chaudiere">Chauffage par PAC MMTC appoint chaudière (log.D)</option>
+                    <option value="chauffage-ecs-MMTC">PAC MMTC R32 double service chauffage + ECS (log.E)</option>
+                    <option value="chauffage-ecs-MMTC-VI">PAC MMTC R32 double service chauffage + ECS avec vanne d'inversion (log.F)</option>
+                    <option value="chauffage-ecs-MMTC-chaud">PAC MMTC R32 + CHAUDIERE pour chauffage, ECS assuré par CHAUDIERE seule (log. G)</option>
+                    <option value="chauffage-ecs-MMTC-chaud-prech_MMTC">Chauffage PAC MMTC R32 appoint CHAUDIERE - ECS préch. PAC indépendante appoint CHAUDIERE (log. H)</option>
                    
                 </select>
         
@@ -445,34 +457,91 @@
             
                 <!-- Paragraphes à afficher en fonction de la sélection -->
                 <div id="page1-ecs-mmtc" class="content page1">
-                    <p>La production d’ecs est assurée par une pompe à chaleur monobloc R32 via un régulateur Diemacontrol qui gère la T°C de consigne du préparateur ecs. </p>
-                    <p>Le bouclage ecs est indépendamment géré par un réchauffeur électrique.</p>
-                    <p> Le ballon tampon installé sur le retour est prévu pour garantir un volume minimum dans l’installation qui doit être supérieure à 5 L/KW et ainsi éviter les courts cycle et assurer une réserve d’énergie lors des dégivrages.</p> 
-                    <p> Si la température du préparateur ecs devra être supérieure à 60°C, la résistance électrique prendra la relève et fera le complément.</p>
-                        
-                        
-                    </p>
+                    <p>La production de l'eau chaude sanitaire est assurée par une pompe à chaleur monobloc R32 via son régulateur Diemacontrol qui gère la T° de consigne sanitaire. </p>
+                    <p>Si la consigne n'est pas atteinte, le régulateur Diemacontrol enclenche la résistance électrique immergée notamment pour la fin de charge en mode ECO.</p>
+                    <p>Le bouclage sanitaire si présent devra être géré indépendamment, à l'aide d'un rechauffeur de boucle par exemple. </p>   
+                    
+                    
+                  
+                  
                 </div>
 
-                <div id="page1-ecs-chauffage-mmtc" class="content page1">
+                <div id="page1-ecs-prech-mmtc" class="content page1">
                     
-                    <p>La production chauffage est assurée par pompe à chaleur monobloc R32 grâce au régulateur Diemacontrol qui gère la T°consigne suivant pente de chauffe adaptée optimisée pour radiateurs chaleur douce. </p>
-                    <p>Si la PAC ne peut suffire pour garantir le confort, l’appoint électrique (1 ou 2 étages) embarqué dans le ballon tampon est appelé pour faire le complément d’énergie si nécessaire. </p>
+                    <p> Le préchauffage de l'eau chaude sanitaire est assurée par une pompe à chaleur monobloc R32 via son régulateur Diemacontrol qui gère la T° de consigne sanitaire.</p>
+                    <p>Cette consigne idéalement comprise entre 45 et 55°C permettra de faire fonctionner la PAC de manière optimale (COP généreux). </p>
                                        
-                    <p>La production d’ECS est assurée par ces mêmes pompes à chaleur monobloc R32 via le régulateur Diemacontrol qui gère la T°C de consigne du préparateur ECS. </p>
-                    <p> Le bouclage sanitaire est indépendamment géré par un réchauffeur électrique.</p>
-                    <p> Pilotée par le régulateur Diemacontrol, la résistance électrique embarquée dans le préparateur assure le complément fin de charge sanitaire.</p>
-                        
+                    <p>Le préparateur sanitaire de relève est quant à lui est alimenté non pas en eau froide, mais en eau préchauffée: il vient en série  de la solution de préchauffage PAC. Les 2 productions sont indépendantes d'un point de vue commande. Le bouclage sanitaire si présent devra être géré par la relève. </p>
+                   
+                    
 
                     
                 </div>
-                <div id="page1-chauffageMMTC-ecsIX" class="content page1">
-                    <p>La production chauffage est assurée par pompe à chaleur monobloc R32 grâce au régulateur Diemacontrol qui gère la T°consigne suivant pente de chauffe adaptée optimisée pour PCBT. </p>
-                     <p> Si la PAC ne peut suffire pour garantir le confort, la chaudière IX est appelée pour faire le complément d’énergie via un contact sec. </p>
-                     <p> La priorité au fonctionnement PAC permet de réduire considérablement l’empreinte carbone de l’installation. </p> 
-                     <p>La production sanitaire est assurée quant à elle par la chaudière en direct qui permet une production semi-accumulée. La chaudière assure également le complément d’énergie nécessaire pour vaincre les déperditions du bouclage sanitaire si présent. </p>
-                        
+                <div id="page1-chauffage-MMTC" class="content page1">
+                    
+                     <p>La production de chauffage est assurée par une pompe à chaleur monobloc R32 via son régulateur Diemacontrol qui gère la T° de consigne suivant une courbe de chauffe (sonde Ext).</p>
+                     <p> Si présence de plusieurs circuits secondaires et/ou pilotage vanne 3 voies de mélange, la régulation murale Diematic VM EVO sera utilisée et échangera les infos avec la Diemacontrol.</p> 
+                     <p>Si la PAC ne peut suffire pour garantir le confort, la Diemacontrol enclenchera les relais de commande pour actionner la ou les résistances électriques (enclenchement possible en 2 étages) à positionner dans le ballon tampon. </p>
+                     <p>Ce dernier est prévu pour garantir un volume minimum d’installation afin d’éviter les courts cycle et assurer une réserve d’énergie lors des phases de dégivrage. Il permet également de servir de découplage entre réseau primaire et secondaire et s’affranchir de problématique débit.</p>  
                 </div>
+
+                <div id="page1-chauffage-MMTC-appoint_chaudiere" class="content page1">
+                    
+                    <p>La production de chauffage est assurée par un ensemble hybride composé d'une ou plusieurs pompe à chaleur monobloc R32 et chaudière(s) gaz.</p>
+                    <p>Le régulateur Diemacontrol calcul la T° de consigne suivant une courbe de chauffe (sonde Ext) et demande l'enclenchement de l'appoint gaz si la production PAC n'est pas suffisante pour répondre à la consigne désirée.</p> 
+                    <p>Grâce à son fonctionnement HYBRIDE ACTIVE, le passage d'une source de chauffage à l'autre -PAC/GAZ- pourra également se faire suivant le coefficient de performance seuil.</p>
+                    <p>Il sera ainsi possible d'optimiser l'hybridation en choisissant parmi les 3 modes disponibles: Energie Primaire/Hybride coût/Hybride CO2.</p>  
+                    <p>Le volume tampon dédié à la production PAC (pré-chauffage des retours) permet de garantir un volume minimum d’installation, éviter les courts cycle et assurer une réserve d’énergie lors des phases de dégivrage. Il permet également de servir de découplage entre réseau primaire et secondaire et s’affranchir de problématique débit.</p>
+                         
+                   
+              
+                </div>
+
+                <div id="page1-chauffage-ecs-MMTC" class="content page1">
+                    
+                    <p>La production de chauffage et sanitaire est assurée par une pompe à chaleur monobloc R32 via son régulateur Diemacontrol qui gère la T° de consigne suivant une courbe de chauffe (sonde Ext).</p>
+                    <p>Si présence de plusieurs circuits secondaires et/ou pilotage vanne 3 voies de mélange, la régulation murale Diematic VM EVO sera utilisée et échangera les infos avec la Diemacontrol.</p> 
+                    <p>Si la PAC ne peut suffire pour garantir le confort chauffage, la Diemacontrol enclenchera les relais de commande pour actionner la ou les résistances électriques (enclenchement possible en 2 étages) à positionner dans le ballon tampon.</p>
+                    
+                    <p>Ce dernier est prévu pour garantir un volume minimum d’installation afin d’éviter les courts cycle et assurer une réserve d’énergie lors des phases de dégivrage. Il permet également de servir de découplage entre réseau primaire et secondaire et s’affranchir de problématique débit. </p>  
+                    <p>La T° préparateur sanitaire est observée par le Diemacontrol qui autorisera la charge sanitaire suivant 2 mode possibles: CONFORT ou ECO. Ce dernier demande l'appoint électrique embarqué au préparateur ECS dans un second temps pour favoriser la part EnR.</p>
+              
+                </div>
+
+                <div id="page1-chauffage-ecs-MMTC-VI" class="content page1">
+                    
+                    <p>La production de chauffage et sanitaire est assurée par une pompe à chaleur monobloc R32 via son régulateur Diemacontrol qui gère la T° de consigne suivant une courbe de chauffe (sonde Ext).</p>
+                    <p>Si présence de plusieurs circuits secondaires et/ou pilotage vanne 3 voies de mélange, la régulation murale Diematic VM EVO sera utilisée et échangera les infos avec la Diemacontrol.</p> 
+                    <p>Si la PAC ne peut suffire pour garantir le confort chauffage, la Diemacontrol enclenchera les relais de commande pour actionner la ou les résistances électriques (enclenchement possible en 2 étages) à positionner dans le ballon tampon.</p>
+                    
+                    <p>Ce dernier est prévu pour garantir un volume minimum d’installation afin d’éviter les courts cycle et assurer une réserve d’énergie lors des phases de dégivrage. Il permet également de servir de découplage entre réseau primaire et secondaire et s’affranchir de problématique débit. </p>  
+                    <p>La T° préparateur sanitaire est observée par le Diemacontrol qui autorisera la charge sanitaire en actionnant une vanne d'inversion CHAUFFAGE ou ECS.</p>
+                    <p>Suivant le mode ECS choisi CONFORT ou ECO, l'appoint électrique embarqué au préparateur ECS sera activée plus ou moins rapidement et influencera la part EnR.</p>
+              
+                </div>
+
+                <div id="page1-chauffage-ecs-MMTC-chaud" class="content page1">
+                    
+                    <p>La production de chauffage est assurée par un ensemble hybride composé d'une ou plusieurs pompe à chaleur monobloc R32 et chaudière(s) gaz.</p>
+                    <p>Le régulateur Diemacontrol calcul la T° de consigne suivant une courbe de chauffe (sonde Ext) et demande l'enclenchement de l'appoint gaz si la production PAC n'est pas suffisante pour répondre à la consigne désirée.</p> 
+                    <p>Grâce à son fonctionnement HYBRIDE ACTIVE, le passage d'une source de chauffage à l'autre -PAC/GAZ- pourra également se faire suivant le coefficient de performance seuil. Il sera ainsi possible d'optimiser l'hybridation en choisissant parmi les 3 modes disponibles: Energie Primaire/Hybride coût/Hybride CO2.</p>
+                    
+                    <p>Le volume tampon dédié à la production PAC (pré-chauffage des retours) permet de garantir un volume minimum d’installation, éviter les courts cycle et assurer une réserve d’énergie lors des phases de dégivrage. Il permet également de servir de découplage entre réseau primaire et secondaire et s’affranchir de problématique débit.</p>  
+                    <p>La production sanitaire sera intégralement gérée et assurée par la chaudière gaz.</p>                 
+              
+                </div>  
+
+                <div id="page1-chauffage-ecs-MMTC-chaud-prech_MMTC" class="content page1">
+                    
+                    <p>La production de chauffage est assurée par un ensemble hybride composé d'une ou plusieurs pompe à chaleur monobloc R32 et chaudière(s) gaz.</p>
+                    <p>Le régulateur Diemacontrol calcul la T° de consigne suivant une courbe de chauffe (sonde Ext) et demande l'enclenchement de l'appoint gaz si la production PAC n'est pas suffisante pour répondre à la consigne désirée.</p> 
+                    <p>Grâce à son fonctionnement HYBRIDE ACTIVE, le passage d'une source de chauffage à l'autre -PAC/GAZ- pourra également se faire suivant le coefficient de performance seuil. Il sera ainsi possible d'optimiser l'hybridation en choisissant parmi les 3 modes disponibles: Energie Primaire/Hybride coût/Hybride CO2.</p>
+                    
+                    <p>Le volume tampon dédié à la production PAC (pré-chauffage des retours) permet de garantir un volume minimum d’installation, éviter les courts cycle et assurer une réserve d’énergie lors des phases de dégivrage. Il permet également de servir de découplage entre réseau primaire et secondaire et s’affranchir de problématique débit.</p>  
+                    <p> Une PAC indépendante et dédiée à la production ECS assurera un préchauffage sanitaire. L'eau ainsi préchauffée -idéalement à 45/55°C- se deversera dans le préparateur ECS de relève (ballons en série). La production sanitaire de relève et bouclage sera intégralement gérée et assurée par la chaudière gaz.</p>                 
+              
+ 
+                </div>  
               
             
        
@@ -502,10 +571,22 @@
                 <h3>Schéma de principe 1</h3>          
                 <select id="imageSelector2" onchange="displayImage('imageSelector2', 'imageDisplay2')">
                     <option value="" disabled selected>Sélectionnez un schéma</option>
-                    <option value="2 MMTC_chauffage.png">1 MMTC chauffage + ECS</option>
-                    <option value="1 MMTC_chauffage_ECS_VI.png">1 MMTC chauffage + ECS</option>
-                    <option value="2 MMTC_chauffage_IX_appoint.png">2 MMTC chauffage + ECS</option>
-                    <option value="2 MMTC_chauffage_IX-EP_sanitaire.png">1 MMTC pour ECS seul</option>
+                    <option value="ECS_100.png">1. ECS 100% (log.A)</option>
+                    <option value="ECS_hyb_prech.png">2. ECS HYBRIDE PRECHAUFFAGE (log.B)</option>
+                    <option value="chauffage_100.png">3. CHAUFFAGE 100% MMTC (log.C)</option>
+                    <option value="chauffage_100_casc.png">4. CHAUFFAGE 100% MMTC cascade (log. C)</option>
+                    <option value="chauf_hyb_c230.png">5. CHAUFFAGE HYBRIDE C230 (log. D)</option>
+                    <option value="chauf_hyb_IX.png">6. CHAUFFAGE HYBRIDE IX (log. D)</option>
+                    <option value="chauf_hyb_IX-m.png">7. CHAUFFAGE HYBRIDE IX-M (log. D)</option>
+                    <option value="chauf_hyb_IX-m_casc.png">8. CHAUFFAGE HYBRIDE IX-M cascade (log. D)</option>
+                    <option value="chauf_hyb_AMC_casc.png">9. CHAUFFAGE HYBRIDE AMC cascade (log. D)</option>
+                    <option value="double_service_100.png">10. DOUBLE SERVICE 100% (log. E)</option>
+                    <option value="double_service_100_VI.png">11. DOUBLE SERVICE 100% - V. INVERSION (log. F)</option>
+                    <option value="double_service_hyb_IX.png">12. DOUBLE SERVICE HYBRIDE IX (log. G)</option>
+                    <option value="double_service_hyb_AMC.png">13. DOUBLE SERVICE HYBRIDE AMC (log. G)</option>
+                    <option value="double_service_hyb_AMC_casc.png">14. DOUBLE SERVICE HYBRIDE AMC CASCADE (log. G)</option>
+                    <option value="double_service_separe_IX.png">15. DOUBLE SERVICE HYBRIDE SEPARE IX (log. H)</option>
+                    <option value="double_service_separe_IX-M_casc.png">16. DOUBLE SERVICE HYBRIDE SEPARE IX-M CASCADE (log. H)</option>
                 </select>
                 
                 <div id="imageDisplay2" class="image-container">
@@ -517,10 +598,24 @@
                 <h3>Schéma de principe 2</h3>  
                     <select id="imageSelector3" onchange="displayImage('imageSelector3', 'imageDisplay3')">
                     <option value="" disabled selected>Sélectionnez un schéma</option>
-                    <option value="2 MMTC_chauffage.png">1 MMTC chauffage + ECS</option>
-                    <option value="1 MMTC_chauffage_ECS_VI.png">1 MMTC chauffage + ECS</option>
-                    <option value="2 MMTC_chauffage_IX_appoint.png">2 MMTC chauffage + ECS</option>
-                    <option value="2 MMTC_chauffage_IX-EP_sanitaire.png">2 MMTC pour chauffage appoint IX-EP + ECS</option>
+                    <option value="ECS_100.png">1. ECS 100% (log.A)</option>
+                    <option value="ECS_hyb_prech.png">2. ECS HYBRIDE PRECHAUFFAGE (log.B)</option>
+                    <option value="chauffage_100.png">3. CHAUFFAGE 100% MMTC (log.C)</option>
+                    <option value="chauffage_100_casc.png">4. CHAUFFAGE 100% MMTC cascade (log. C)</option>
+                    <option value="chauf_hyb_c230.png">5. CHAUFFAGE HYBRIDE C230 (log. D)</option>
+                    <option value="chauf_hyb_IX.png">6. CHAUFFAGE HYBRIDE IX (log. D)</option>
+                    <option value="chauf_hyb_IX-m.png">7. CHAUFFAGE HYBRIDE IX-M (log. D)</option>
+                    <option value="chauf_hyb_IX-m_casc.png">8. CHAUFFAGE HYBRIDE IX-M cascade (log. D)</option>
+                    <option value="chauf_hyb_AMC_casc.png">9. CHAUFFAGE HYBRIDE AMC cascade (log. D)</option>
+                    <option value="double_service_100.png">10. DOUBLE SERVICE 100% (log. E)</option>
+                    <option value="double_service_100_VI.png">11. DOUBLE SERVICE 100% - V. INVERSION (log. F)</option>
+                    <option value="double_service_hyb_IX.png">12. DOUBLE SERVICE HYBRIDE IX (log. G)</option>
+                    <option value="double_service_hyb_AMC.png">13. DOUBLE SERVICE HYBRIDE AMC (log. G)</option>
+                    <option value="double_service_hyb_AMC_casc.png">14. DOUBLE SERVICE HYBRIDE AMC CASCADE (log. G)</option>
+                    <option value="double_service_separe_IX.png">15. DOUBLE SERVICE HYBRIDE SEPARE IX (log. H)</option>
+                    <option value="double_service_separe_IX-M_casc.png">16. DOUBLE SERVICE HYBRIDE SEPARE IX-M CASCADE (log. H)</option>                   
+                    
+
                 </select>
 
                 <div id="imageDisplay3" class="image-container">
@@ -533,10 +628,24 @@
                 <h3>Schéma de principe 3</h3>  
                 <select id="imageSelector4" onchange="displayImage('imageSelector4', 'imageDisplay4')">
                     <option value="" disabled selected>Sélectionnez un schéma</option>
-                    <option value="2 MMTC_chauffage.png">1 MMTC chauffage + ECS</option>
-                    <option value="1 MMTC_chauffage_ECS_VI.png">1 MMTC chauffage + ECS</option>
-                    <option value="2 MMTC_chauffage_IX_appoint.png">2 MMTC chauffage + ECS</option>
-                    <option value="2 MMTC_chauffage_IX-EP_sanitaire.png">1 MMTC pour ECS seul</option>
+                    <option value="ECS_100.png">1. ECS 100% (log.A)</option>
+                    <option value="ECS_hyb_prech.png">2. ECS HYBRIDE PRECHAUFFAGE (log.B)</option>
+                    <option value="chauffage_100.png">3. CHAUFFAGE 100% MMTC (log.C)</option>
+                    <option value="chauffage_100_casc.png">4. CHAUFFAGE 100% MMTC cascade (log. C)</option>
+                    <option value="chauf_hyb_c230.png">5. CHAUFFAGE HYBRIDE C230 (log. D)</option>
+                    <option value="chauf_hyb_IX.png">6. CHAUFFAGE HYBRIDE IX (log. D)</option>
+                    <option value="chauf_hyb_IX-m.png">7. CHAUFFAGE HYBRIDE IX-M (log. D)</option>
+                    <option value="chauf_hyb_IX-m_casc.png">8. CHAUFFAGE HYBRIDE IX-M cascade (log. D)</option>
+                    <option value="chauf_hyb_AMC_casc.png">9. CHAUFFAGE HYBRIDE AMC cascade (log. D)</option>
+                    <option value="double_service_100.png">10. DOUBLE SERVICE 100% (log. E)</option>
+                    <option value="double_service_100_VI.png">11. DOUBLE SERVICE 100% - V. INVERSION (log. F)</option>
+                    <option value="double_service_hyb_IX.png">12. DOUBLE SERVICE HYBRIDE IX (log. G)</option>
+                    <option value="double_service_hyb_AMC.png">13. DOUBLE SERVICE HYBRIDE AMC (log. G)</option>
+                    <option value="double_service_hyb_AMC_casc.png">14. DOUBLE SERVICE HYBRIDE AMC CASCADE (log. G)</option>
+                    <option value="double_service_separe_IX.png">15. DOUBLE SERVICE HYBRIDE SEPARE IX (log. H)</option>
+                    <option value="double_service_separe_IX-M_casc.png">16. DOUBLE SERVICE HYBRIDE SEPARE IX-M CASCADE (log. H)</option>              
+                    
+
                 </select>
 
                 <div id="imageDisplay4" class="image-container">
@@ -577,38 +686,137 @@
                  
              
             </div>
-            <div id="IX" class="page-group">
+            <div id="IX_145" class="page-group">
                 <div class= "page"> 
                     <!-- Documentations MMTC -->
-                  <img src="Caract_tech_IX.png" alt="caractéristique IX"  width=100%>
+                    <img src="IX_145_doc1.png" alt="doc1 IX 145"  width=100%>
                     </div>
+                   <div class= "page"> 
+                   <!-- Documentations MMTC -->
+                   <img src="IX_145_doc2.png" alt="doc2 IX 145"  width=100%>
+                   </div>
+                   <div class= "page"> 
+                   <!-- Documentations MMTC -->
+                   <img src="IX_145_doc3.png" alt="doc3 IX 145"  width=100%>
+                   </div>
                 
+            </div>
+
+            <div id="IX_145_casc" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                    <img src="IX_145_cascade_doc.png" alt="doc IX 145 casc"  width=100%>
+                    </div>               
+            </div>
+
+            <div id="IX_245" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                    <img src="IX_245_doc1.png" alt="doc1 IX 245"  width=100%>
+                    </div>
+                   <div class= "page"> 
+                   <!-- Documentations MMTC -->
+                   <img src="IX_245_doc2.png" alt="doc2 IX 245"  width=100%>
+                   </div>
+                   <div class= "page"> 
+                   <!-- Documentations MMTC -->
+                   <img src="IX_245_doc3.png" alt="doc3 IX 245"  width=100%>
+                   </div>
+                
+            </div>
+
+            <div id="IX_245_casc" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                    <img src="IX_245_cascade_doc.png" alt="doc IX 245 casc"  width=100%>
+                    </div>               
             </div>
 
             <div id="IX-M" class="page-group">
                 <div class= "page"> 
                     <!-- Documentations MMTC -->
-                  <img src="Caract_tech_IX-M.png" alt="caractéristique IX-M"  width=100%>
-                    </div>
-                
+                  <img src="IX-M_doc1.png" alt="doc1 IX-M"  width=100%>
+                </div>
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="IX-M_doc2.png" alt="doc2 IX-M"  width=100%>
+                </div>
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="IX-M_doc3.png" alt="doc3 IX-M"  width=100%>
+                </div>
+          
             </div>
 
             <div id="AMC_PRO" class="page-group">
                 <div class= "page"> 
                     <!-- Documentations MMTC -->
-                  <img src="Dimensions AMC PRO.png" alt="Dimesion AMC PRO"  width=100%>
+                  <img src="AMC_PRO_doc1.png" alt="doc1 AMC PRO"  width=100%>
                     </div>                
                        
                 <div class= "page"> 
                     <!-- Documentations MMTC -->
-                  <img src="Caractéristiques _ regul AMC PRO.png" alt="Caract AMC PRO"  width=100%>
+                  <img src="AMC_PRO_doc2.png" alt="doc2 AMC PRO"  width=100%>
                     </div>
                 
+            </div>
+
+            <div id="MCA_160" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="MCA_160_doc1.png" alt="doc1 MCA160"  width=100%>
+                    </div>                
+                       
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="MCA_160_doc2.png" alt="doc2 MCA160"  width=100%>
+                    </div>
+                
+            </div>
+
+            <div id="C230" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="C230_doc1.png" alt="doc1 C230"  width=100%>
+                    </div>                
+                       
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="C230_doc2.png" alt="doc2 C230"  width=100%>
+                    </div>
+                
+            </div>
+
+            <div id="C340/C640" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                  <img src="C340_C640_doc1.png" alt="doc1 C340"  width=100%>
+                    </div>                
+                       
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                    <img src="C340_C640_doc2.png" alt="doc2 C340"  width=100%>
+                </div>
+                
+                <div class= "page"> 
+                <!-- Documentations MMTC -->
+                    <img src="C340_C640_doc3.png" alt="doc3 C340"  width=100%>
+                </div>
+            </div>
+
+            <div id="ballon_B" class="page-group">
+                <div class= "page"> 
+                    <!-- Documentations MMTC -->
+                    <img src="Ballons_B.png" alt="doc1 ballon B"  width=100%>
+                </div>             
+    
             </div>
 
             <div id="Annexe" class="page">
                 <h2 id="title_annexe">ANNEXES</h2>             
            </div>
+
+         
                 
             </div>
 

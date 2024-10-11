@@ -119,11 +119,11 @@ body {
  .grand-caractere {
     font-size: 20px;
     padding: 5px;  
-    width: 67%; /* Définit la largeur à 70% de la page */
+    width: 74%; /* Définit la largeur à 70% de la page */
     height: calc(1.7em * 3); /* Hauteur pour 3 lignes de texte */
     box-sizing: border-box; 
     display: block; 
-    margin-left: 100px; /* Centrage horizontal */
+    margin: 0 auto; /* Centrage horizontal */
     text-align: center; /* Centre le texte horizontalement */
     line-height: 1.5em;
     resize: none;
@@ -214,7 +214,7 @@ label .titre {
 
 .info label {
     margin-right: 10px; /* Espace entre le label et l'input */
-    min-width: 140px; /* Largeur minimum pour aligner les labels */
+    min-width: 110px; /* Largeur minimum pour aligner les labels */
 }
 
 .info input {
@@ -339,6 +339,11 @@ input text {
   
 }
 
+.page1 {
+    display: none;
+}
+
+
 #page3 textarea {
     border: 1px solid rgba(0, 0, 0, 0.2); /* Bordure fine et semi-transparente */
     border-radius: 5px; /* Coins légèrement arrondis */
@@ -402,6 +407,10 @@ input text {
 h4 {
     margin-bottom: 10px;
     margin-top: 20px;
+}
+
+.donnees-commercial input {
+    width: 100%;
 }
 
 
