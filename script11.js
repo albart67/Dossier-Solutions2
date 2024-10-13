@@ -18,6 +18,9 @@ document.getElementById('selection1').addEventListener('change', function() {
 
 
 
+
+
+
 // Fonction pour basculer l'affichage des groupes de pages avec les boutons du menu 
 function togglePages(groupId) {
     const pageGroup = document.getElementById(groupId);

@@ -480,6 +480,14 @@ h4 {
 }
 
 /*Selection des Synoptique*/
+
+/* .content .page1 .page2 {
+    height: 300px;
+}  */
+/* .menu-selection {
+    height: 300px;
+} */
+
 #selection1 {
     font-weight: bold;
 }
@@ -492,15 +500,15 @@ h4 {
 .schema {
     transform: rotate(90deg);
     /* Optionnel: Ajuster la taille si nécessaire */
-    width: 100%;
+    width: auto;
     height: auto;
 }
 
 .image-container img {
-    width: 100%;
+    width: 120%;
     height: 100%;
     object-fit: contain;
-    transform: rotate(90deg) translateX(250px); 
+    transform: rotate(90deg) translateX(250px) translateY(100px); 
     transform-origin: center; 
 }
 
